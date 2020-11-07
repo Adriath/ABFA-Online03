@@ -72,7 +72,7 @@ public class Ejercicio1 {
     // Ejercicio 2: operaciones simples
     
     /**
-     * Realiza operaciones simples (suma, resta, multiplicación y división) a partir de don números introcidos por teclado.
+     * Realiza operaciones simples (suma, resta, multiplicación y división) a partir de dos números introducidos por teclado.
      */
     
     public void operacionesSimples()
@@ -141,12 +141,37 @@ public class Ejercicio1 {
         
     }
     
+    // Ejercicio 5: 10 primeros números pares.
+    
+    public void muestraPares()
+    {
+        int numero ; 
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.println("Introduce un número, por favor: ");
+        numero = teclado.nextInt() ;
+        
+        for (int i = 0; i < 10; i++) {
+            
+            if (numero %2 == 0) // si el número es par
+            {
+                System.out.print((numero + 2) + " ");
+                numero += 2 ;
+            }
+            else    // si el número es impar
+            {
+                System.out.print((numero + 1) + " "); 
+                numero += 2 ;
+            }
+        }
+    }
+    
     
     public static void main(String[] args) {
         
         Ejercicio1 objeto = new Ejercicio1();
        
-        objeto.compruebaPositivo();
+        objeto.muestraPares();
         
         
     }
