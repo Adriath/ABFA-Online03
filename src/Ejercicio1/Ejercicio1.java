@@ -75,7 +75,7 @@ public class Ejercicio1 {
      * Realiza operaciones simples (suma, resta, multiplicación y división) a partir de don números introcidos por teclado.
      */
     
-    public void OperacionesSimples()
+    public void operacionesSimples()
     {
         System.out.println("Introduce un número, por favor: ");
         Scanner teclado = new Scanner(System.in) ;
@@ -95,12 +95,28 @@ public class Ejercicio1 {
         System.out.println("La división de " + (int)num1 + " / " + (int)num2 + " es igual a = " + (int)division);
     }
     
+    // Ejercicio 3: mostrar los 100 primeros números negativos.
+    
+    /**
+     * Muestra los primeros 100 números negativos.
+     */
+    
+    public void muestraNegativos()
+    {
+        System.out.println("En este programa vamos a mostrar los primeros 100 números negativos.");
+        
+        for (int numero = -1; numero >= -100; numero--) {
+            
+            System.out.print(numero + " ");
+        }
+    }
+    
     
     public static void main(String[] args) {
         
         Ejercicio1 objeto = new Ejercicio1();
        
-        objeto.OperacionesSimples();
+        objeto.muestraNegativos();
         
         
     }
