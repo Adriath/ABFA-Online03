@@ -111,12 +111,42 @@ public class Ejercicio1 {
         }
     }
     
+    // Ejercicio 4: comprobar positivo.
+    
+    /**
+     * Comprueba si un número introducido por teclado es positivo o negativo.
+     */
+    
+    public void compruebaPositivo()
+    {
+        int numero ;
+        
+        do {
+            
+            System.out.println("Introduce un número, por favor: ");
+            Scanner teclado = new Scanner(System.in);
+            numero = teclado.nextInt();
+            
+            if (numero > 0) // Es positivo
+            { 
+                System.out.println("El número introducido ES POSITIVO.");
+            }
+            else    // es negativo
+            {
+                System.out.println("El número introducido ES NEGATIVO.");
+            }
+                
+            
+        } while (numero == 0);
+        
+    }
+    
     
     public static void main(String[] args) {
         
         Ejercicio1 objeto = new Ejercicio1();
        
-        objeto.muestraNegativos();
+        objeto.compruebaPositivo();
         
         
     }
