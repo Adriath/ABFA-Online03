@@ -143,6 +143,11 @@ public class Ejercicio1 {
     
     // Ejercicio 5: 10 primeros números pares.
     
+    /**
+     * Muestra los 10 siguientes números pares a partir de un número introducido
+     * por teclado.
+     */
+    
     public void muestraPares()
     {
         int numero ; 
@@ -166,12 +171,60 @@ public class Ejercicio1 {
         }
     }
     
+    // Ejercicio 6: menú que suma o resta.
+    
+    /**
+     * Mediante un menú, suma o resta dos números introducidos por teclado.
+     */
+    
+    public void menuSumaResta()
+    {
+        int num1, num2 ;
+        int suma , resta ;
+        int opcion ;
+        
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.println("Vamos a realizar una operación a partir de dos números. \n");
+        
+        System.out.println("Por favor, introduzca un primer número: ");
+        num1 = teclado.nextInt();
+        
+        System.out.println("Y ahora el otro número: ");
+        num2 = teclado.nextInt();
+        
+        System.out.println("\nElige una de las siguientes opciones: "
+        + "\n 1 --> Se realiza la SUMA de ambos números."
+        + "\n 2 --> Se realiza la RESTA de ambos números.");
+        opcion = teclado.nextInt();
+        
+        switch (opcion)
+        {
+            case 1:
+                
+                suma = num1 + num2 ;
+                
+                System.out.println("La SUMA de los dos números es: " + suma);
+                break;
+                
+            case 2:
+                
+                resta = num1 - num2 ;
+                
+                System.out.println("La RESTA de los dos números es: " + resta);
+                break;
+                
+            default:
+                System.out.println("Opción incorrecta.");
+                break;
+        }
+    }
     
     public static void main(String[] args) {
         
         Ejercicio1 objeto = new Ejercicio1();
        
-        objeto.muestraPares();
+        objeto.menuSumaResta();
         
         
     }
