@@ -29,7 +29,12 @@ import java.util.Scanner;
  */
 public class Ejercicio1 {
     
-    // Conversor de pulgadas
+    // Ejercicio 1. Conversor de pulgadas.
+    
+    /**
+     * Convierte pulgadas a centímetros y viceversa.
+     * 
+     */
     
     public void conversorPulgadas()
     {
@@ -64,16 +69,38 @@ public class Ejercicio1 {
         }
     }
     
-    public void prueba(){
-        System.out.println("Si ves esto es que funciona.");
+    // Ejercicio 2: operaciones simples
+    
+    /**
+     * Realiza operaciones simples (suma, resta, multiplicación y división) a partir de don números introcidos por teclado.
+     */
+    
+    public void OperacionesSimples()
+    {
+        System.out.println("Introduce un número, por favor: ");
+        Scanner teclado = new Scanner(System.in) ;
+        double num1 = teclado.nextDouble() ;
+        
+        System.out.println("Introduce otro número, por favor: ");
+        double num2 = teclado.nextDouble() ;
+        
+        double suma = num1 + num2 ; // suma
+        double resta = num1 - num2 ; // resta
+        double multiplicacion = num1 * num2 ; // multiplicación
+        double division = num1 / num2 ; // división
+        
+        System.out.println("La suma de " + (int)num1 + " + " + (int)num2 + " es igual a = " + (int)suma);
+        System.out.println("La resta de " + (int)num1 + " - " + (int)num2 + " es igual a = " + (int)resta);
+        System.out.println("La multiplicación de " + (int)num1 + " * " + (int)num2 + " es igual a = " + (int)multiplicacion);
+        System.out.println("La división de " + (int)num1 + " / " + (int)num2 + " es igual a = " + (int)division);
     }
     
     
     public static void main(String[] args) {
         
-        Ejercicio1 conversor = new Ejercicio1();
+        Ejercicio1 objeto = new Ejercicio1();
        
-        conversor.conversorPulgadas();
+        objeto.OperacionesSimples();
         
         
     }
