@@ -5,6 +5,8 @@
  */
 package Ejercicio1;
 
+import java.util.Scanner;
+
 /**
  * A partir de la tarea online creada en la unidad didáctica 2, crea diferentes
  * métodos, unos por ejercicio, que reciban como parámetros los datos que sean 
@@ -27,6 +29,52 @@ package Ejercicio1;
  */
 public class Ejercicio1 {
     
+    // Conversor de pulgadas
+    
+    public void conversorPulgadas()
+    {
+        System.out.println("Bienvenido/a al conversor de pulgadas<-->centímetros.");
+        System.out.println("Escoge una opción, por favor: \n\n1:Centímetros --> Pulgadas \n2: Pulgadas --> Centímetros \n");
+        Scanner teclado = new Scanner(System.in);
+        int opcion = teclado.nextInt();
+        
+        switch (opcion){
+            
+            case 1: //conversión de centímetros a pulgadas
+                
+                System.out.println("Introduce los centímetros: ");
+                double cm = teclado.nextDouble() ;
+                
+                double pulgadas = cm / 2.54 ;
+                
+                System.out.println(cm + " centímetros son: " + pulgadas + " pulgadas.");
+                
+                break;
+                
+            case 2: //conversión de pulgadas a centímetros
+                
+                System.out.println("Introduce las pulgadas: ");
+                pulgadas = teclado.nextDouble() ;
+                
+                cm = pulgadas * 2.54 ;
+                
+                System.out.println(pulgadas + " pulgadas son: " + cm + " centímetros.");
+                
+                break;
+        }
+    }
+    
+    public void prueba(){
+        System.out.println("Si ves esto es que funciona.");
+    }
     
     
+    public static void main(String[] args) {
+        
+        Ejercicio1 conversor = new Ejercicio1();
+       
+        conversor.conversorPulgadas();
+        
+        
+    }
 }
