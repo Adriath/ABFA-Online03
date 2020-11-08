@@ -220,12 +220,50 @@ public class Ejercicio1 {
         }
     }
     
+    // Ejercicio 7: división infitina.
+    
+    /**
+     * Partiendo de 100 dividirá por cada número introducido por el usuario.
+     * La ejecución termina cuando divide entre 0.
+     */
+    
+    public void cienEntreNumero()
+    {
+        double numero = 100 ;
+        double numeroUsuario ;
+        double resultado ; 
+        
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.println("Introduzca un número: ");
+        numeroUsuario = teclado.nextDouble();
+        
+        while (numeroUsuario != 0)
+        {
+            resultado = numero / numeroUsuario ;
+            
+            if (resultado %2 == 0) {
+                
+                System.out.println((int)numero + "/" + (int)numeroUsuario + " = " + (int)resultado);
+            }
+            else{
+                
+                System.out.println((int)numero + "/" + (int)numeroUsuario + " = " + resultado);
+            }
+            
+            numero = resultado ;
+            
+            System.out.print("Introduce otro número, por favor: ");
+            numeroUsuario = teclado.nextDouble();
+        }
+        
+        System.out.println("La división por cero no se puede realizar.");
+    }
+    
     public static void main(String[] args) {
         
         Ejercicio1 objeto = new Ejercicio1();
-       
-        objeto.menuSumaResta();
         
-        
+        objeto.cienEntreNumero();
     }
 }
