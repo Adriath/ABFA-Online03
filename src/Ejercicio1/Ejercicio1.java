@@ -279,10 +279,37 @@ public class Ejercicio1 {
         }
     }
     
+    // Ejercicio 9: par o impar.
+    
+    /**
+     * Indica si un número introducido por teclado es par o impar.
+     */
+    
+    public void esParImpar()
+    {
+        int numero ;
+        
+        Scanner teclado = new Scanner(System.in);
+        
+        do {
+            
+            System.out.print("Introduzca un número, por favor: ");
+            numero = teclado.nextInt();
+            
+        } while (numero == 0);
+        
+        if (numero %2 == 0) {
+            
+            System.out.println("\nEl número es par.");
+        }
+        else{
+            System.out.println("\nEl número es impar.");
+        }
+        
+    }
+    
     public static void main(String[] args) {
         
-        Ejercicio1 objeto = new Ejercicio1();
         
-        objeto.muestraImpares();
     }
 }
