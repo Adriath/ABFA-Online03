@@ -260,10 +260,29 @@ public class Ejercicio1 {
         System.out.println("La división por cero no se puede realizar.");
     }
     
+    // Ejercicio 8: muestra 50 primeros impares.
+    
+    /**
+     * Muestra los 50 primeros números impares.
+     */
+    
+    public void muestraImpares()
+    {
+        int numero = 1 ;
+        
+        System.out.println("En este programa vamos a mostrar los primeros 50 números impares: ");
+        
+        for (int i = 1; i <= 50; i++) {
+            
+            System.out.print(numero + " ");
+            numero += 2 ;
+        }
+    }
+    
     public static void main(String[] args) {
         
         Ejercicio1 objeto = new Ejercicio1();
         
-        objeto.cienEntreNumero();
+        objeto.muestraImpares();
     }
 }
