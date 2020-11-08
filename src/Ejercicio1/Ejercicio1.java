@@ -310,6 +310,28 @@ public class Ejercicio1 {
     
     public static void main(String[] args) {
         
+        int opcion ;
+        Scanner teclado = new Scanner(System.in);
+        
+        System.out.println("Elige una de las siguientes opciones: ");
+        System.out.println("\n 1: Conversor pulgadas <--> centímetros."
+            + "\n 2: Suma, resta, multiplica y divide un número."
+            + "\n 3: Muestra los primeros 100 números negativos."
+            + "\n 4: Comprueba si un número es positivo."
+            + "\n 5: Muestra los 10 siguientes números pares."
+            + "\n 6: Sumar o restar dos números."
+            + "\n 7: Divide 100 sucesivas veces."
+            + "\n 8: Muestra los primeros 50 números impares."
+            + "\n 9: Indica si un número es par o impar.");
+        
+        opcion = teclado.nextInt();
+             
+        switch (opcion)
+        {
+            case 1:
+                System.out.println("Caso 1");
+                break;
+        }
         
     }
 }
