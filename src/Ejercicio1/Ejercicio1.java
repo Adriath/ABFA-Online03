@@ -29,6 +29,129 @@ import java.util.Scanner;
  */
 public class Ejercicio1 {
     
+        public static void main(String[] args) {
+        
+        int opcion ;
+        
+        Scanner teclado = new Scanner(System.in);
+        Ejercicio1 objeto = new Ejercicio1();
+        
+        System.out.println("Elige una de las siguientes opciones: ");
+        System.out.println("\n 1: Conversor pulgadas <--> centímetros."
+            + "\n 2: Suma, resta, multiplica y divide un número."
+            + "\n 3: Muestra los primeros 100 números negativos."
+            + "\n 4: Comprueba si un número es positivo."
+            + "\n 5: Muestra los 10 siguientes números pares."
+            + "\n 6: Sumar o restar dos números."
+            + "\n 7: Divide 100 sucesivas veces."
+            + "\n 8: Muestra los primeros 50 números impares."
+            + "\n 9: Indica si un número es par o impar.");
+        
+        opcion = teclado.nextInt();
+             
+        switch (opcion)
+        {
+            case 1: // conversor de pulgadas
+                
+                System.out.println("Bienvenido/a al conversor de pulgadas<-->centímetros.");
+                System.out.println("Escoge una opción, por favor: \n\n1:Centímetros --> Pulgadas \n2: Pulgadas --> Centímetros \n");
+                
+                opcion = teclado.nextInt();
+                
+                objeto.conversorPulgadas(opcion);
+        
+                break;
+                
+            case 2: // operaciones simples
+                
+                System.out.println("Vamos a realizar operaciones simples a "
+                        + "partir de dos números.\n");
+                System.out.println("Introduce un número, por favor: ");
+                double num1 = teclado.nextDouble();
+                
+                System.out.println("Introduce otro número, por favor: ");
+                double num2 = teclado.nextDouble();
+                
+                objeto.operacionesSimples(num1, num2);
+                
+                break;
+                
+            case 3: // muestra negativos
+                
+                objeto.muestraNegativos();
+                
+                break;
+                
+            case 4: // comprueba si es positivo.
+                
+                System.out.println("Vamos a comprobar si un número es positivo. \n");
+                System.out.print("Introduce un número, por favor: ");
+                
+                int num = teclado.nextInt();
+                
+                objeto.compruebaPositivo(num);
+                
+                break;
+                
+            case 5: // 10 siguientes números pares
+                
+                System.out.println("Vamos a mostrar los 10 siguientes números "
+                        + "pares a partir de un número introducido. \n");
+                System.out.print("Introduce un número, por favor: ");
+                
+                num = teclado.nextInt();
+                
+                objeto.muestraPares(num);
+                
+                break;
+                
+            case 6: // menú para sumar o restar dos números dados.
+                
+                System.out.println("Vamos a realizar una operación a partir de dos números. \n");
+                
+                System.out.print("Introduce un número, por favor: ");
+                num1 = teclado.nextInt();
+                
+                System.out.print("Ahora introduce el número con el que operará: ");
+                num2 = teclado.nextInt();
+                
+                objeto.menuSumaResta((int)num1, (int)num2);
+                
+                break;
+                
+            case 7: // división infinita.
+                
+                System.out.println("Vamos a dividir el número 100 entre un "
+                        + "número introducido por teclado.");
+                System.out.print("Introduce un número, por favor: ");
+                
+                double numeroUsuario = teclado.nextDouble();
+                
+                objeto.cienEntreNumero(numeroUsuario);
+                
+                break;
+                
+            case 8: // muestra impares
+                
+                objeto.muestraImpares();
+                
+                break;
+                
+            case 9: // saber si un número es par o impar.
+                
+                System.out.println("Vamos a averiguar si el número introducido"
+                        + " es par o impar.\n");
+                System.out.print("Introduce un número, por favor: ");
+                num = teclado.nextInt();
+                
+                objeto.esParImpar(num);
+                
+                break;
+                
+        }
+        
+    }
+    
     // Ejercicio 1. Conversor de pulgadas.
     
     /**
@@ -89,6 +212,8 @@ public class Ejercicio1 {
         System.out.println("La resta de " + (int)num1 + " - " + (int)num2 + " es igual a = " + (int)resta);
         System.out.println("La multiplicación de " + (int)num1 + " * " + (int)num2 + " es igual a = " + (int)multiplicacion);
         System.out.println("La división de " + (int)num1 + " / " + (int)num2 + " es igual a = " + (int)division);
+                
+        
     }
     
     // Ejercicio 3: mostrar los 100 primeros números negativos.
@@ -111,7 +236,7 @@ public class Ejercicio1 {
     
     /**
      * Comprueba si un número introducido por teclado es positivo o negativo.
-     * @param numero Número a comprobar.
+     * @param num Número a comprobar.
      */
     
     public void compruebaPositivo(int num)
@@ -256,6 +381,7 @@ public class Ejercicio1 {
     
     /**
      * Indica si un número introducido por teclado es par o impar.
+     * @param num Número a comprobar si es par o impar.
      */
     
     public void esParImpar(int num)
@@ -269,124 +395,5 @@ public class Ejercicio1 {
             }
     }
     
-    public static void main(String[] args) {
-        
-        int opcion ;
-        
-        Scanner teclado = new Scanner(System.in);
-        Ejercicio1 objeto = new Ejercicio1();
-        
-        System.out.println("Elige una de las siguientes opciones: ");
-        System.out.println("\n 1: Conversor pulgadas <--> centímetros."
-            + "\n 2: Suma, resta, multiplica y divide un número."
-            + "\n 3: Muestra los primeros 100 números negativos."
-            + "\n 4: Comprueba si un número es positivo."
-            + "\n 5: Muestra los 10 siguientes números pares."
-            + "\n 6: Sumar o restar dos números."
-            + "\n 7: Divide 100 sucesivas veces."
-            + "\n 8: Muestra los primeros 50 números impares."
-            + "\n 9: Indica si un número es par o impar.");
-        
-        opcion = teclado.nextInt();
-             
-        switch (opcion)
-        {
-            case 1: // conversor de pulgadas
-                
-                System.out.println("Bienvenido/a al conversor de pulgadas<-->centímetros.");
-                System.out.println("Escoge una opción, por favor: \n\n1:Centímetros --> Pulgadas \n2: Pulgadas --> Centímetros \n");
-                
-                opcion = teclado.nextInt();
-                
-                objeto.conversorPulgadas(opcion);
-        
-                break;
-                
-            case 2: // operaciones simples
-                
-                System.out.println("Vamos a realizar operaciones simples a "
-                        + "partir de dos números.\n");
-                System.out.println("Introduce un número, por favor: ");
-                double num1 = teclado.nextDouble();
-                
-                System.out.println("Introduce otro número, por favor: ");
-                double num2 = teclado.nextDouble();
-                
-                objeto.operacionesSimples(num1, num2);
-                
-                break;
-                
-            case 3: // muestra negativos
-                
-                objeto.muestraNegativos();
-                
-                break;
-                
-            case 4: // comprueba si es positivo.
-                
-                System.out.println("Vamos a comprobar si un número es positivo. \n");
-                System.out.print("Introduce un número, por favor: ");
-                
-                int num = teclado.nextInt();
-                
-                objeto.compruebaPositivo(num);
-                
-                break;
-                
-            case 5: // 10 siguientes números pares
-                
-                System.out.println("Vamos a mostrar los 10 siguientes números "
-                        + "pares a partir de un número introducido. \n");
-                System.out.print("Introduce un número, por favor: ");
-                
-                num = teclado.nextInt();
-                
-                objeto.muestraPares(num);
-                
-                break;
-                
-            case 6: // menú para sumar o restar dos números dados.
-                
-                System.out.println("Vamos a realizar una operación a partir de dos números. \n");
-                
-                System.out.print("Introduce un número, por favor: ");
-                num1 = teclado.nextInt();
-                
-                System.out.print("Ahora introduce el número con el que operará: ");
-                num2 = teclado.nextInt();
-                
-                objeto.menuSumaResta((int)num1, (int)num2);
-                
-                break;
-                
-            case 7: // división infinita.
-                
-                System.out.println("Vamos a dividir el número 100 entre un "
-                        + "número introducido por teclado.");
-                System.out.print("Introduce un número, por favor: ");
-                
-                double numeroUsuario = teclado.nextDouble();
-                
-                objeto.cienEntreNumero(numeroUsuario);
-                
-            case 8: // muestra impares
-                
-                objeto.muestraImpares();
-                
-                break;
-                
-            case 9: // saber si un número es par o impar.
-                
-                System.out.println("Vamos a averiguar si el número introducido"
-                        + " es par o impar.\n");
-                System.out.print("Introduce un número, por favor: ");
-                num = teclado.nextInt();
-                
-                objeto.esParImpar(num);
-                
-                break;
-                
-        }
-        
-    }
+
 }
