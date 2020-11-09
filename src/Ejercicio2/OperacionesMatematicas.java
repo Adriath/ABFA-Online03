@@ -24,6 +24,22 @@ public class OperacionesMatematicas {
     // métodos
     
     /**
+     * Configura el valor de la variable x.
+     * @param x Valor de x.
+     */
+    public void configuraX(double x){
+        this.x = x ;
+    }
+    
+    /**
+     * Configura el valor de la variable y.
+     * @param y Valor de y.
+     */
+    public void configuraY(double y){
+        this.y = y ;
+    }
+    
+    /**
      * Suma los valores "x" e "y".
      * @param x Variable x.
      * @param y Variable y.
@@ -43,7 +59,7 @@ public class OperacionesMatematicas {
      */
     public static double resta(double x, double y)
     {
-        double resultado = x + y;
+        double resultado = x - y;
         return resultado ;
     }
     
