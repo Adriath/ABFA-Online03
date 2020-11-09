@@ -5,7 +5,7 @@
  */
 package Ejercicio1;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * A partir de la tarea online creada en la unidad didáctica 2, crea diferentes
@@ -32,33 +32,44 @@ public class Ejercicio1 {
         public static void main(String[] args) {
         
         int opcion ;
+        boolean validador = false ;
         
         Scanner teclado = new Scanner(System.in);
         Ejercicio1 objeto = new Ejercicio1();
         
-        System.out.println("Elige una de las siguientes opciones: ");
-        System.out.println("\n 1: Conversor pulgadas <--> centímetros."
-            + "\n 2: Suma, resta, multiplica y divide un número."
-            + "\n 3: Muestra los primeros 100 números negativos."
-            + "\n 4: Comprueba si un número es positivo."
-            + "\n 5: Muestra los 10 siguientes números pares."
-            + "\n 6: Sumar o restar dos números."
-            + "\n 7: Divide 100 sucesivas veces."
-            + "\n 8: Muestra los primeros 50 números impares."
-            + "\n 9: Indica si un número es par o impar.");
-        
-        opcion = teclado.nextInt();
-             
-        switch (opcion)
+        while (validador == false)
         {
+            System.out.println("Elige una de las siguientes opciones: ");
+            System.out.println("\n 1: Conversor pulgadas <--> centímetros."
+                + "\n 2: Suma, resta, multiplica y divide un número."
+                 + "\n 3: Muestra los primeros 100 números negativos."
+                + "\n 4: Comprueba si un número es positivo."
+                + "\n 5: Muestra los 10 siguientes números pares."
+                + "\n 6: Sumar o restar dos números."
+                + "\n 7: Divide 100 sucesivas veces."
+                + "\n 8: Muestra los primeros 50 números impares."
+                + "\n 9: Indica si un número es par o impar."
+                + "\n 0: Salir del programa.");
+        
+            opcion = teclado.nextInt();
+             
+            switch (opcion)
+            {
             case 1: // conversor de pulgadas
                 
                 System.out.println("Bienvenido/a al conversor de pulgadas<-->centímetros.");
                 System.out.println("Escoge una opción, por favor: \n\n1:Centímetros --> Pulgadas \n2: Pulgadas --> Centímetros \n");
                 
-                opcion = teclado.nextInt();
+                try
+                {
+                    opcion = teclado.nextInt();
                 
-                objeto.conversorPulgadas(opcion);
+                    objeto.conversorPulgadas(opcion);
+                }
+                catch(Exception e){
+                    
+                    System.err.println("Debes introducir una opción válida.");
+                }
         
                 break;
                 
@@ -148,8 +159,19 @@ public class Ejercicio1 {
                 
                 break;
                 
+            case 0: // salir del programa
+                
+                System.out.println("Has salido del programa.");
+                validador = true;
+                
+                break;
+                
+            default:
+                
+                System.out.println("Introduce una opción válida.");
+                
+            }
         }
-        
     }
     
     // Ejercicio 1. Conversor de pulgadas.
@@ -160,7 +182,7 @@ public class Ejercicio1 {
      * @param opcion opción del menú que seguirá el conversor.
      */
     
-    public void conversorPulgadas(int opcion)
+    public void conversorPulgadas(int opcion) throws InputMismatchException
     {
         
         Scanner teclado = new Scanner(System.in);
